@@ -3,7 +3,7 @@ import os
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse, FileResponse
 
-app = FastAPI()
+app = FastAPI(docs_url=None, redoc_url=None)
 
 @app.get("/", response_class=HTMLResponse)
 def index():
@@ -185,6 +185,6 @@ def read_file(filename: str):
 
 
 
-import uvicorn
-if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8787)
+# import uvicorn
+# if __name__ == "__main__":
+#     uvicorn.run(app, host="0.0.0.0", port=8787)
