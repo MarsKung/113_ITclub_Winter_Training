@@ -1,5 +1,5 @@
 import os
-import uvicorn
+
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse, FileResponse
 
@@ -9,6 +9,9 @@ app = FastAPI()
 def index():
     return """
     <html>
+    <head>
+
+</head>
     <style>
     /* static/style.css */
 body {
@@ -180,5 +183,8 @@ def read_file(filename: str):
     url = os.path.join("app/img/", filename)
     return FileResponse(url)
 
+
+
+import uvicorn
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8787)
