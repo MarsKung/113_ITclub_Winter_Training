@@ -5,7 +5,7 @@ from pydantic import BaseModel
 from fastapi.templating import Jinja2Templates
 import os
 
-app = FastAPI()
+app = FastAPI(docs_url=None, redoc_url=None)
 templates = Jinja2Templates(directory="app/templates")
 class Item(BaseModel):
     id: int
@@ -27,7 +27,7 @@ async def read_items(request: Request):
     return templates.TemplateResponse("index.html", {"request": request, "items": items_db})
 
 @app.get("/buy")
-async def buy_item( id: Optional[str] = Cookie(None), price: Optional[str] = Cookie(None),user: Optional[str] = Cookie(None)):
+async def buy_item( id: Optional[str] = Cookie(None), Product_Prices: Optional[str] = Cookie(None),user: Optional[str] = Cookie(None)):
     html_content = """
         <html>
             <head>
@@ -40,7 +40,7 @@ async def buy_item( id: Optional[str] = Cookie(None), price: Optional[str] = Coo
         """
     
     try:
-        price = int(price)
+        price = int(Product_Prices)
         id = int(id)
         price += 87
         item = next(i for i in items_db if i.id == id)
@@ -84,7 +84,7 @@ async def get_items(request: Request, response: Response,id: int):
     if item:
         response =templates.TemplateResponse("item.html", {"request": request, "item": item})
         response.set_cookie(key="id", value=item.id)
-        response.set_cookie(key="price", value=item.price)
+        response.set_cookie(key="Product_Prices", value=item.price)
         response.set_cookie(key="user", value="guest")
         return response
     else:
