@@ -19,7 +19,7 @@ items_db = [
     Item(id=85, name="iPhone 16 Pro", description="沙漠色鈦金屬 iPhone 16 Pro 與 iPhone 16 Pro Max，周圍點綴著星星、煙火與鱗片", price=36900, image="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/store-card-50-cny-iphone-pro-202501?wid=960&hei=1000", data="假的：D"),
     Item(id=86, name="Apple Watch Series 10", description="鈦金屬金色 Apple Watch Series 10 搭配金色米蘭式錶環，周圍點綴著火花、圓點與金色鱗片", price=13500, image="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/store-card-50-cny-watch-s10-202501?wid=960&hei=1000",data="假的：D"),
     Item(id=88, name="MacBook Pro", description="打開的銀色 MacBook Pro，展示 Liquid Retina XDR 顯示器、圓角設計與凸出的腳座。周圍點綴著火花、星星、圓點與金色鱗片", price=54900, image="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/store-card-50-cny-macbook-pro-202501?wid=960&hei=1000&fmt=p-jpg",data="假的：D"),
-    Item(id=87, name="flag", description="U can't see me:)", price=9999999999, image="https://www.google.com/url?sa=i&url=https%3A%2F%2Fm.economictimes.com%2Fopinion%2Fjust-in-jest%2Fred-flag-over-a-pink-paper%2Farticleshow%2F87088850.cms&psig=AOvVaw19a89YJYKLbYfeOwIMgQbm&ust=1737721473324000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCIjdwozri4sDFQAAAAAdAAAAABAE",data="FLAG_FORMAT{Appl3_st0r3_M45t3r}")
+    Item(id=87, name="flag", description="U can't see me:)", price=9999999999, image="https://img.etimg.com/thumb/msid-87088964,width-300,height-225,imgsize-7052,resizemode-75/1.jpg",data="FLAG_FORMAT{Appl3_st0r3_M45t3r}")
 
 ]
 @app.get("/")
