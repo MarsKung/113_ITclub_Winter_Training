@@ -87,15 +87,6 @@ async def get_items(request: Request, response: Response,id: int):
         response.set_cookie(key="price", value=item.price)
         response.set_cookie(key="user", value="guest")
         return response
-    # return HTMLResponse(content="Item not found", status_code=404)
-    # for i in items_db:
-    #     if i.id == id:
-    #         response = templates.TemplateResponse("item.html", {"request": request, "item": i})
-    #         response.set_cookie(key="id", value=i.id)
-    #         response.set_cookie(key="price", value=i.price)
-    #         response.set_cookie(key="user", value="guest")
-            
-    #         return response
     else:
         html_content = """
             <html>
