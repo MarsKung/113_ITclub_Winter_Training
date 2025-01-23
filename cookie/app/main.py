@@ -102,6 +102,6 @@ async def get_items(request: Request, response: Response,id: int):
 
 
 
-import uvicorn
-if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8787)
+# import uvicorn
+# if __name__ == "__main__":
+#     uvicorn.run(app, host="0.0.0.0", port=8787)
