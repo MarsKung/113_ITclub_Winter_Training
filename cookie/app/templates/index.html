@@ -1,0 +1,79 @@
+<html>
+
+<head>
+    <link data-srs="" rel="stylesheet" href="https://store.storeimages.cdn-apple.com/8756/store.apple.com/static-resources/rs-globalelements-2.13.1-45174/dist/ac-globalnav.css" media="screen, print">
+
+
+
+
+    <link data-srs="" rel="stylesheet" href="https://store.storeimages.cdn-apple.com/8756/store.apple.com/static-resources/rs-external-1.61.0-5cadd/rel/tw/external.css" media="screen, print">
+    <link data-srs="" rel="stylesheet" href="https://store.storeimages.cdn-apple.com/8756/store.apple.com/static-resources/rs-vendor-1.24.0-a7250/dist/common-css@1.0.7/dist/common.css" media="screen, print">
+    <link data-srs="" rel="stylesheet" href="https://store.storeimages.cdn-apple.com/8756/store.apple.com/static-resources/rs-merch-4.6.0-c5ed4/dist/store-home.css" media="screen, print">
+
+    <link data-srs="" rel="stylesheet" href="https://www.apple.com/wss/fonts?families=SF+Pro+TC,v1:400,600|SF+Pro+Text,v3:400,600|SF+Pro+Display,v3:500|SF+Pro+Icons,v3|Apple+Monochrome+Emoji,v3|Apple+Monochrome+Emoji+Ind,v2|MHei,v1">
+
+
+
+
+    <link rel="stylesheet" href="https://store.storeimages.cdn-apple.com/8756/store.apple.com/shop/Catalog/regional/amr/css/aos-overrides.css" media="screen, print">
+
+    <link rel="stylesheet" href="https://store.storeimages.cdn-apple.com/8756/store.apple.com/shop/Catalog/global/css/dd/merch/step-zero.css" media="screen, print">
+    <link rel="stylesheet" href="https://store.storeimages.cdn-apple.com/8756/store.apple.com/shop/Catalog/global/css/web/fee/landing-pages/as-store.css" media="screen, print">
+
+    <script crossorigin="anonymous">
+        window.irOn=true;
+    </script>
+
+
+
+
+    <script data-srs="" src="https://store.storeimages.cdn-apple.com/8756/store.apple.com/static-resources/rs-external-1.61.0-5cadd/rel/unsupportedBrowser.min.js" nomodule="" crossorigin="anonymous"></script>
+    <script data-srs="" src="https://store.storeimages.cdn-apple.com/8756/store.apple.com/static-resources/rs-echo-3.22.2-b5eb1/dist/echo.min.js" async="" crossorigin="anonymous" type="module"></script>
+    <script data-srs="" src="https://store.storeimages.cdn-apple.com/8756/store.apple.com/static-resources/rs-external-1.61.0-5cadd/rel/external.js" crossorigin="anonymous"></script>
+    <script data-srs="" src="https://store.storeimages.cdn-apple.com/8756/store.apple.com/static-resources/rs-external-1.61.0-5cadd/rel/log.js" crossorigin="anonymous"></script>
+    <script data-srs="" src="https://store.storeimages.cdn-apple.com/8756/store.apple.com/static-resources/rs-analytics-1.0.4-64fc6/rel/analytics.js" crossorigin="anonymous"></script>
+    <script data-srs="" src="https://store.storeimages.cdn-apple.com/8756/store.apple.com/static-resources/rs-vendor-1.24.0-a7250/dist/lodash@4.17.21/lodash.min.js" crossorigin="anonymous"></script>
+    <script data-srs="" src="https://store.storeimages.cdn-apple.com/8756/store.apple.com/static-resources/rs-vendor-1.24.0-a7250/dist/react@18.2.0/umd/react.production.min.js" crossorigin="anonymous"></script>
+    <script data-srs="" src="https://store.storeimages.cdn-apple.com/8756/store.apple.com/static-resources/rs-vendor-1.24.0-a7250/dist/react-dom@18.2.0/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
+    <script data-srs="" src="https://store.storeimages.cdn-apple.com/8756/store.apple.com/static-resources/rs-merch-4.6.0-c5ed4/dist/store-home.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <div class="as-l-container rs-shop-container rs-shop-container-withchatandstore">
+        <div class="row">
+            <div class="column large-8 small-12 rs-shop-header-section" data-autom="shop-header">
+                <h1><div class="rs-shop-header">商店。</div>
+<div class="rs-shop-subheader">智慧的新一年，由此展開。</div></h1>
+            </div>
+
+        </div>
+    </div>
+
+    <div data-core-scroller="" class="rf-cards-scroller-content" style="overflow-x: scroll;">
+        <div data-core-scroller-platter="" class="rf-cards-scroller-platter" role="list" aria-label="最新登場。">
+            {% for item in items[:3] %}
+            <div data-core-scroller-item="" role="listitem">
+                <div class="rf-cards-scroller-itemview">
+                    <div class="rf-ccard rf-ccard-50">
+                        <div class="as-util-relatedlink" onclick="window.location.href='/items?id={{ item.id }}'">
+                            <div class="rf-ccard-content rf-ccard-content-withfullimg">
+                                <div class="rf-ccard-img-full-wrapper"><img width="480" height="500" alt="沙漠色鈦金屬 iPhone 16 Pro 與 iPhone 16 Pro Max，周圍點綴著星星、煙火與鱗片" src="{{ item.image }}"
+                                    class="rf-ccard-img-full"></div>
+                                <div class="rf-ccard-content-info">
+                                    <div class="rf-ccard-content-header"><a href="/items?id={{ item.id }}" data-relatedlink=":rh:_link" data-slot-name="Shelf-1" data-display-name="AOS: " data-index="1" data-trigger-stoppropagation="true" class="rf-ccard-content-headerlink"> {{ item.name }} </a></div>
+                                    <div class="rf-ccard-content-desc">
+                                        <b>NT$ {{ item.price }}</b>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+
+</html>
