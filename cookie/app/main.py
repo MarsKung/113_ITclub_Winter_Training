@@ -42,7 +42,6 @@ async def buy_item( id: Optional[str] = Cookie(None), Product_Prices: Optional[s
     try:
         price = int(Product_Prices)
         id = int(id)
-        price += 87
         item = next(i for i in items_db if i.id == id)
         if user != "guest":
             html_content = """
