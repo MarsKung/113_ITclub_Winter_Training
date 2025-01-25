@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>購買成功</title>
+        <link rel="stylesheet" type="text/css" href="test?file=style.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+.body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #000;
+    color: #ffffff;
+}
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw; /* Change to viewport width */
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.video-background video {
+    width: 100%;
+    height: auto; /* Change to auto */
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); /* Center vertically */
+    object-fit: fill; /* Change to fill */
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+.container {
+    max-width: 980px;
+    margin: 50px auto;
+    padding: 40px;
+    background: rgba(0, 0, 0, 0.3); /* Darkened background */
+    backdrop-filter: blur(5px); /* Increased blur */
+    border-radius: 18px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3); /* Darker shadow */
+    transition: transform 0.5s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.title {
+    font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font-size: 56px;
+    line-height: 1.07143;
+    font-weight: 600;
+    letter-spacing: -0.005em;
+    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.8) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 20px;
+    transition: all 0.3s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.message {
+    font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font-size: 21px;
+    line-height: 1.381;
+    font-weight: 400;
+    letter-spacing: .011em;
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 16px 32px;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.message:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.container:hover {
+    transform: scale(1.02);
+}
+
+.title:hover {
+    transform: scale(1.02);
+}
+.home-link {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.home-link a {
+    color: transparent; /* Make text transparent */
+    background: #f65c5c; /* Add background color */
+    -webkit-background-clip: text;
+    background-clip: text;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 10px;
+    transition: transform 0.3s; /* Add transition for smooth effect */
+
+}
+
+.home-link a:hover {
+    text-decoration: underline;
+    transform: scale(1.1); /* 放大效果 */
+}
+
+.flag {
+    color: rgba(255, 255, 255, 0);
+    margin-left: auto;
+}
+        </style>
+    </head>
+    <body>
+        <div class="video-background">
+            <video autoplay muted loop playsinline>
+                <source src="https://www.apple.com/105/media/us/mac/family/2024/b0f6d595-f4dd-4393-8316-102be97a5d1b/anim/welcome/xlarge_2x.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="overlay"></div>
+        <div class="container">
+            
+            <h1 class="title">購買成功</h1> 
+            <a href="/" class="message">回首頁</a>
+            <span class="flag">{{data}}</span>
+        </div>
+        
+        </div>
+    </body>
+</html>

@@ -26,8 +26,12 @@ items_db = [
 async def read_items(request: Request):
     return templates.TemplateResponse("index.html", {"request": request, "items": items_db})
 
+@app.get("/flag")
+async def rickroll():
+    return RedirectResponse(url="https://www.youtube.com/watch?v=dQw4w9WgXcQ")
+
 @app.get("/buy")
-async def buy_item( id: Optional[str] = Cookie(None), Product_Prices: Optional[str] = Cookie(None),user: Optional[str] = Cookie(None)):
+async def buy_item( request: Request ,id: Optional[str] = Cookie(None), Product_Prices: Optional[str] = Cookie(None),user: Optional[str] = Cookie(None)):
     html_content = """
         <html>
             <head>
@@ -61,27 +65,17 @@ async def buy_item( id: Optional[str] = Cookie(None), Product_Prices: Optional[s
         elif price < 0:
             return FileResponse(os.path.join("app/img/","I_have_no_money.jpg"), status_code=403)
         elif price == 0:
-            html_content = f'''
-            <html>
-                <head>
-                    <title>購買成功</title>
-                </head>
-                <body>
-                    <h1>購買成功</h1>
-                    <p>{item.data}</p>
-                </body>
-            '''
-            return HTMLResponse(html_content, status_code=200)
+            return templates.TemplateResponse("test.html", {"request": request, "data": item.data})
     except:
         pass
     return HTMLResponse(html_content, status_code=403)
         
-    
+
 @app.get("/items", response_class=HTMLResponse)
 async def get_items(request: Request, response: Response,id: int):
     item = next((i for i in items_db if i.id == id), None)
     if item:
-        response =templates.TemplateResponse("item.html", {"request": request, "item": item})
+        response =templates.TemplateResponse("final.html", {"request": request, "item": item})
         response.set_cookie(key="id", value=item.id)
         response.set_cookie(key="Product_Prices", value=item.price)
         response.set_cookie(key="user", value="guest")
@@ -101,6 +95,7 @@ async def get_items(request: Request, response: Response,id: int):
 
 
 
-# import uvicorn
-# if __name__ == "__main__":
-#     uvicorn.run(app, host="0.0.0.0", port=8787)
+
+import uvicorn
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=8787)
