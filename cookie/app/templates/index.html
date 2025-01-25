@@ -36,7 +36,100 @@
     <script data-srs="" src="https://store.storeimages.cdn-apple.com/8756/store.apple.com/static-resources/rs-vendor-1.24.0-a7250/dist/react@18.2.0/umd/react.production.min.js" crossorigin="anonymous"></script>
     <script data-srs="" src="https://store.storeimages.cdn-apple.com/8756/store.apple.com/static-resources/rs-vendor-1.24.0-a7250/dist/react-dom@18.2.0/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
     <script data-srs="" src="https://store.storeimages.cdn-apple.com/8756/store.apple.com/static-resources/rs-merch-4.6.0-c5ed4/dist/store-home.js" crossorigin="anonymous"></script>
+    <style>
 
+    .as-l-container {
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 40px 20px;
+    }
+    
+    .rs-shop-header {
+        font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", sans-serif;
+        font-size: 56px;
+        line-height: 1.07143;
+        font-weight: 600;
+        letter-spacing: -0.005em;
+        background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.8) 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        margin-bottom: 10px;
+    }
+    
+    .rs-shop-subheader {
+        font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", sans-serif;
+        font-size: 28px;
+        line-height: 1.381;
+        font-weight: 400;
+        letter-spacing: .011em;
+        color: rgba(255,255,255,0.8);
+    }
+    
+    .rf-cards-scroller-content {
+        margin: 30px -20px;
+        padding: 20px;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .rf-cards-scroller-platter {
+        display: flex;
+        gap: 20px;
+        padding: 10px 0;
+    }
+    
+    .rf-ccard {
+        background: rgba(255,255,255,0.05);
+        backdrop-filter: blur(20px);
+        border-radius: 18px;
+        overflow: hidden;
+        transition: transform 0.5s cubic-bezier(0.33, 1, 0.68, 1);
+    }
+    
+    .rf-ccard:hover {
+        transform: scale(1.02);
+        background: rgba(255,255,255,0.08);
+    }
+    
+    .rf-ccard-img-full {
+        width: 100%;
+        height: auto;
+        transition: transform 0.5s ease;
+    }
+    
+    .rf-ccard:hover .rf-ccard-img-full {
+        transform: scale(1.05);
+    }
+    
+    .rf-ccard-content-info {
+        padding: 20px;
+    }
+    
+    .rf-ccard-content-headerlink {
+        font-family: "SF Pro Display", sans-serif;
+        font-size: 24px;
+        color: #fff;
+        text-decoration: none;
+        display: block;
+        margin-bottom: 8px;
+    }
+    
+    .rf-ccard-content-desc {
+        font-family: "SF Pro Text", sans-serif;
+        font-size: 17px;
+        color: rgba(255,255,255,0.8);
+    }
+    
+    @media (max-width: 734px) {
+        .rs-shop-header {
+            font-size: 40px;
+        }
+        
+        .rs-shop-subheader {
+            font-size: 21px;
+        }
+    }
+     </style>
 </head>
 
 <body>
